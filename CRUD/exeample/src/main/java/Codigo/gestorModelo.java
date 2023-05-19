@@ -46,9 +46,10 @@ public class gestorModelo {
             consulta = c.conectar().createStatement();
             String cadena = "SELECT m.id, m.nombre AS modelo, mc.nombre AS marca, tc.tipo AS tipo_coche, fe.nombre AS fuente_energia, marca_id, tipo_coche_id, fuente_energia_id "
                     + "FROM modelo AS m JOIN marca AS mc ON m.marca_id = mc.id JOIN tipo_coche AS tc ON m.tipo_coche_id = tc.id "
-                    + "JOIN fuente_energia AS fe ON m.fuente_energia_id = fe.id; ";
+                    + "JOIN fuente_energia AS fe ON m.fuente_energia_id = fe.id"
+                    + "; ";
             rs = consulta.executeQuery(cadena);
-            System.out.println(cadena);
+            //System.out.println(cadena);
             while (rs.next()) {
                 Modelo modelo = new Modelo();
                 modelo.setId(rs.getInt("id"));
@@ -76,12 +77,26 @@ private static int convertirANumero(String p) {
         ResultSet rs = null;
         List<Modelo> modelos = new ArrayList<>();
             consulta = c.conectar().createStatement();
-            String cadena = "SELECT * FROM modelo WHERE "+"id = "+convertirANumero(filtro)+" OR nombre like '%"+filtro+"%'";
+            System.out.println("el filtro es : "+filtro);
+            String cadena = "SELECT m.id, m.nombre AS modelo, mc.nombre AS marca, tc.tipo AS tipo_coche, fe.nombre AS fuente_energia, marca_id, tipo_coche_id, fuente_energia_id "
+                    + "FROM modelo AS m JOIN marca AS mc ON m.marca_id = mc.id JOIN tipo_coche AS tc ON m.tipo_coche_id = tc.id "
+                    + "JOIN fuente_energia AS fe ON m.fuente_energia_id = fe.id  "
+                    + "WHERE "
+                    + "(mc.nombre like '%"+filtro+"%'"
+                    + "); ";
+            System.out.println(cadena);
             rs = consulta.executeQuery(cadena);
+            //System.out.println(cadena);
             while (rs.next()) {
                 Modelo modelo = new Modelo();
                 modelo.setId(rs.getInt("id"));
-                modelo.setNombre(rs.getString("nombre"));
+                modelo.setNombre(rs.getString("modelo"));
+                modelo.setMarcaId(rs.getInt("marca_id"));
+                modelo.setMarca(rs.getString("marca"));
+                modelo.setTipoCocheId(rs.getInt("tipo_coche_id"));
+                modelo.setTipoCoche(rs.getString("tipo_coche"));
+                modelo.setFuenteEnergiaId(rs.getInt("fuente_energia_id"));
+                modelo.setFuenteEnergia(rs.getString("fuente_energia"));
                 modelos.add(modelo);
             }
         return modelos;

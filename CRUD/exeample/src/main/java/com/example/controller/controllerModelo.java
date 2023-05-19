@@ -64,7 +64,7 @@ public class controllerModelo {
  public String listarModelos(Model model){
         String valorfinal="./modelo/listarModelo";
         try {
-            model.addAttribute("modelos", gem.listarModelos());
+            model.addAttribute("modelos", gem.listarModelosFiltrados(""));
         } catch (SQLException ex) {
             Logger.getLogger(controllerModelo.class.getName()).log(Level.SEVERE, null, ex);
             valorfinal="error";
