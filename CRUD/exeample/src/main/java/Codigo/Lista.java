@@ -1,13 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Codigo;
-
-/**
- *
- * @author DAM & DAW
- */
+import lombok.Data;
+@Data
 public class Lista {
+    private int id;
+    private String nombre;
+    private int marcaId;
+    private String marca;
+    private int tipoCocheId;
+    private String tipoCoche;
+    private int fuenteEnergiaId; 
+    private String fuenteEnergia;
     
 }
