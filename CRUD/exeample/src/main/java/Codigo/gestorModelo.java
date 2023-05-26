@@ -104,7 +104,7 @@ private static int convertirANumero(String p) {
     
     public void modificarModelo(Modelo modelo) throws SQLException{
         consulta = c.conectar().createStatement();
-        String cadena = "update modelo set nombre='" + modelo.getNombre() + "' where id='" + modelo.getId() + "'";
+        String cadena = "update modelo set nombre='" + modelo.getNombre() + "', marca_id=" + modelo.getMarcaId() + ", tipo_coche_id=" + modelo.getTipoCocheId() + ", fuente_energia_id=" + modelo.getFuenteEnergiaId()+ " where id=" + modelo.getId() + ";";
         System.out.println(cadena);
         consulta.executeUpdate(cadena);
     }

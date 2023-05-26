@@ -102,6 +102,9 @@ public class controllerModelo {
   public String modificarModelo (@RequestParam ("codmodelo") int id,Model model){
         String valorfinal="./modelo/modificarmodelo";
         try {
+            model.addAttribute("marcas", gm.listarMarcas());
+             model.addAttribute("tiposCoche", gtp.listarTipocoches()); 
+             model.addAttribute("tiposEnergia", gen.listarEnergias());
             model.addAttribute("modelo", gem.consultarModelo(id));
         } catch (SQLException ex) {
             Logger.getLogger(controllerModelo.class.getName()).log(Level.SEVERE, null, ex);

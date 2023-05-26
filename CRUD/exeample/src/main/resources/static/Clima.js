@@ -52,5 +52,87 @@ document
     }
   });
   weather.fetchWeather("Madrid");
+  
+  window.addEventListener('scroll', () => {
+    const element = document.querySelector('.carrusel');
+    const position = element.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+    if (position < screenPosition) {
+      element.style.opacity = 1;
+      element.style.transform = 'translateY(0)';
+    }
+  });
+  
+  window.addEventListener('scroll', () => {
+    const element = document.querySelector('.tarjeta');
+    const position = element.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+    if (position < screenPosition) {
+      element.style.opacity = 1;
+      element.style.transform = 'translateY(0)';
+    }
+  });
+  
+  window.addEventListener('scroll', () => {
+    const element = document.querySelector('.modelos');
+    const position = element.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+    if (position < screenPosition) {
+      element.style.opacity = 1;
+      element.style.transform = 'translateY(0)';
+    }
+  });
+  
+  window.addEventListener('scroll', () => {
+    const element = document.querySelector('.lanzamientos');
+    const position = element.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+    if (position < screenPosition) {
+      element.style.opacity = 1;
+      element.style.transform = 'translateY(0)';
+    }
+  });
+  
+   window.addEventListener('scroll', () => {
+    const element = document.querySelector('.venta');
+    const position = element.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+    if (position < screenPosition) {
+      element.style.opacity = 1;
+      element.style.transform = 'translateY(0)';
+    }
+  });
+  
+  window.addEventListener('scroll', () => {
+    const element = document.querySelector('.venta1');
+    const position = element.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+    if (position < screenPosition) {
+      element.style.opacity = 1;
+      element.style.transform = 'translateY(0)';
+    }
+  });
+  
+  window.addEventListener('scroll', () => {
+    const element = document.querySelector('.venta2');
+    const position = element.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+    if (position < screenPosition) {
+      element.style.opacity = 1;
+      element.style.transform = 'translateY(0)';
+    }
+  });
+  
+  window.addEventListener('scroll', () => {
+    const element = document.querySelector('.video');
+    const position = element.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+    if (position < screenPosition) {
+      element.style.opacity = 1;
+      element.style.transform = 'translateY(0)';
+    }
+  });
+  
+    
 }
 
