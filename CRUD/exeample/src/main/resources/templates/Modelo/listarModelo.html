@@ -67,7 +67,7 @@
             <!-- fin navbar -->
             <!--Formulario-->
             <div class="container">
-                <h1 class="text-center pt-5">LISTA MODELOS</h1>
+                <h1 class="text-center pt-5">BIENVENIDO</h1>
                 <div class="py-3 col-5 mx-auto">
                     <form action="#" th:action="@{./listar}" method="post" class="d-flex" role="search">
                         <input class="form-control text-center" type="search" placeholder="Buscar" name="filtro" id="filtro" aria-label="filtro" th:value="${filtro}" autocomplete="off">
@@ -76,25 +76,26 @@
                 </div>
             </div>
             <div class="text-center">
-                <h1 class="">modelos</h1>
+                <h1 class="">LISTA MODELOS</h1>
             </div>
             <div class="container">
-                <a href="http://localhost:8080/modelo/alta"> <img src="" alt=""><button type="" class="btn btn-light col-1">Otra Alta</button></a>
+                <a href="http://localhost:8080/modelo/alta"> <img src="" alt=""><button type="" class="btn btn-light col-1">Alta</button></a>
                 <table class="table table-striped">
                     <thead>
                         <tr class="">
-                            <th colspan="1">Accion</th>
+                            <th colspan="1">Eliminar</th>
                             <th>id</th>
                             <th>Modelo</th>
                             <th>marca</th>
                             <th>tipo de Coche</th>
                             <th>fuente de Energia</th>
+                            <th>Modificar</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr th:each="modelo : ${modelos}">
                             <td class="align-middle">
-                                <a th:href="@{./eliminar?codmodelo={id}(id=${modelo.id})}"><img src="/delete-bin-line.png" alt="Modificar"></a>
+                                <a th:href="@{./eliminar?codmodelo={id}(id=${modelo.id})}"><img src="/delete-bin-line.png" alt="Eliminar"></a>
                             </td>
                             <td th:text="${modelo.id}"></td>
                             <td th:text="${modelo.nombre}"></td>
